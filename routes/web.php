@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/create_job',function(){
+  return view('create_job');  
+});
+
+Route::post('/handle_create_job','ToDoListsController@store');
