@@ -24,3 +24,5 @@ Route::get('/create_job',function(){
 });
 
 Route::post('/handle_create_job','ToDoListsController@store');
+
+Route::get('/view_detail_job/{id}','ToDoListsController@show')->name('show_job');

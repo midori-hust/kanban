@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\JobRequest;
 use App\ToDoLists;
 
 class ToDoListsController extends Controller
@@ -33,9 +34,8 @@ class ToDoListsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JobRequest $request)
     {
-        //TODO: Vadition 
         $new_job = new todolists();
         $new_job->user_id = $request->user_id;
         $new_job->job_title = $request->job_title;
@@ -43,6 +43,8 @@ class ToDoListsController extends Controller
         $new_job->deadline = $request->deadline;
         $new_job->job_status = $request->job_status;
         $new_job->save();
+        
+        return redirect()->route('show_job',['id'=>$new_job->id]);
     }
          
 
@@ -54,7 +56,10 @@ class ToDoListsController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = todolists::find($id);
+        if($job == NULL)
+            return redirect()->route('home');
+        return view('view_detail_job',['job'=>$job]);
     }
 
     /**
