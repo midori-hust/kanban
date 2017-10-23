@@ -70,7 +70,10 @@ class ToDoListsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = todolists::find($id);
+        if($job == null) 
+            return redirect()->route('home');
+        return view('edit_job',['job'=>$job]);
     }
 
     /**
@@ -80,9 +83,16 @@ class ToDoListsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(JobRequest $request, $id)
     {
-        //
+        $edit_job = todolists::find($id);
+        $edit_job->job_title = $request->job_title;
+        $edit_job->job_description = $request->job_description;
+        $edit_job->deadline = $request->deadline;
+        $edit_job->job_status = $request->job_status;
+        $edit_job->save();
+       
+        return redirect()->route('show_job',['id'=>$id]);
     }
 
     /**

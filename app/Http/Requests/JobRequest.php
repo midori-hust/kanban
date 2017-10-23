@@ -29,9 +29,3 @@ class JobRequest extends FormRequest
         ];
     }
 }
-
-            // $table->string('job_title',255);
-            // $table->mediumText('job_description');
-            // $table->date('deadline');
-            // $table->enum('job_status',['do','doing','done']);
-            // $table->timestamps();

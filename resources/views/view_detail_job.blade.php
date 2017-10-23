@@ -1,8 +1,10 @@
  
 @if($job != NULL)
     <h2> Create Detail Job</h2>
-    <h3> Title: {{$job->job_title}}</h3>
-    <h3> Description: {{$job->job_description}}</h3>
-    <h3> Status: {{$job->job_status}}</h3>
-    <h3> Deadline: {{$job->deadline}}</h3>
+    <p> <b> Title: </b> {{$job->job_title}}</p>
+    <p> <b> Description: </b> {{$job->job_description}}</p>
+    <p> <b> Status: </b> {{$job->job_status}}</p>
+    <p> <b> Deadline: </b>{{$job->deadline}}</p>
+    <a href="{{url('edit_job/'.$job->id)}}"> Edit </a>
+    
 @endif
