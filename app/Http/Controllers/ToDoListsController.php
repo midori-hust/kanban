@@ -103,6 +103,9 @@ class ToDoListsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = todolists::find($id);
+        if($job != NULL)
+            $job->delete();
+        return redirect()->route('home');
     }
 }

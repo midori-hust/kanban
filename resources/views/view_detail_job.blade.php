@@ -6,5 +6,5 @@
     <p> <b> Status: </b> {{$job->job_status}}</p>
     <p> <b> Deadline: </b>{{$job->deadline}}</p>
     <a href="{{url('edit_job/'.$job->id)}}"> Edit </a>
-    
+    <a href="{{url('delete_job/'.$job->id)}}"> Delete </a>
 @endif
