@@ -25,10 +25,11 @@ Route::get('/create_job',function(){
 
 Route::post('/handle_create_job','ToDoListsController@store')->name('store');
 
-
 Route::get('/edit_job/{id}','ToDoListsController@edit')->name('edit_job');
 Route::post('/edit_job/{id}','ToDoListsController@update')->name('update_job');
 
 Route::get('/delete_job/{id}','ToDoListsController@destroy')->name('delete_job');
 
 Route::get('/view_detail_job/{id}','ToDoListsController@show')->name('show_job');
+
+Route::get('/view_listjobs/{id}/{job_status}','ToDoListsController@viewlistjobs');

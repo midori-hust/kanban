@@ -13,9 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                   <a href="{{url('create_job')}}"> Add Job </a> <br/>
-                   <a href="{{url('view_job')}}"> View To Do Lists </a> <br/>
+                    @if(Auth::check())
+                       <a href="{{url('create_job')}}"> Add Job </a> <br/>
+                       View To Do Lists<br/>
+                      <a href="{{url('view_listjobs/'.Auth::id().'/1')}}"> Status : DO </a> <br/>
+                      <a href="{{url('view_listjobs/'.Auth::id().'/2')}}"> Status : DOING </a> <br/>
+                      <a href="{{url('view_listjobs/'.Auth::id().'/3')}}"> Status : DONE </a> <br/>
+                    @endif
                 </div>
             </div>
         </div>

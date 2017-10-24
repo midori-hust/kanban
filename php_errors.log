@@ -1,0 +1,1 @@
+[24-Oct-2017 04:17:18 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesStacks.php on line 60

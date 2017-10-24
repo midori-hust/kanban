@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\JobRequest;
+use Illuminate\Support\collection;
+
 use App\ToDoLists;
+use App\User;
 
 class ToDoListsController extends Controller
 {
@@ -108,4 +111,10 @@ class ToDoListsController extends Controller
             $job->delete();
         return redirect()->route('home');
     }
+    
+    public function viewlistjobs($id,$job_status){
+        $data = todolists::where(['user_id'=>$id,'job_status'=>$job_status])->select('id','job_title')->get();
+        return $data;
+    }
+    
 }
