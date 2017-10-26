@@ -32,4 +32,5 @@ Route::get('/delete_job/{id}','ToDoListsController@destroy')->name('delete_job')
 
 Route::get('/view_detail_job/{id}','ToDoListsController@show')->name('show_job');
 
-Route::get('/view_listjobs/{id}/{job_status}','ToDoListsController@viewlistjobs');
+Route::get('/view_listjobs/{id}/{job_status}','ToDoListsController@viewjobs');
+Route::get('/view_listjobs/{user_id}','ToDoListsController@viewlistjobs');

@@ -16,9 +16,10 @@
                     @if(Auth::check())
                        <a href="{{url('create_job')}}"> Add Job </a> <br/>
                        View To Do Lists<br/>
-                      <a href="{{url('view_listjobs/'.Auth::id().'/1')}}"> Status : DO </a> <br/>
-                      <a href="{{url('view_listjobs/'.Auth::id().'/2')}}"> Status : DOING </a> <br/>
-                      <a href="{{url('view_listjobs/'.Auth::id().'/3')}}"> Status : DONE </a> <br/>
+                      <a href="{{url('view_listjobs/'.Auth::id().'/do')}}"> Status : DO </a> <br/>
+                      <a href="{{url('view_listjobs/'.Auth::id().'/doing')}}"> Status : DOING </a> <br/>
+                      <a href="{{url('view_listjobs/'.Auth::id().'/done')}}"> Status : DONE </a> <br/>
+                      <a href="{{url('view_listjobs/'.Auth::id())}}"> Status : ALL </a> <br/>
                     @endif
                 </div>
             </div>

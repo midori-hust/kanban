@@ -112,9 +112,27 @@ class ToDoListsController extends Controller
         return redirect()->route('home');
     }
     
-    public function viewlistjobs($id,$job_status){
+    public function viewjobs($id,$job_status){
         $data = todolists::where(['user_id'=>$id,'job_status'=>$job_status])->select('id','job_title')->get();
-        return $data;
+      
+        if($data != NULL){
+            return view('status_jobs',['list_job'=>$data,'job_status'=>$job_status]);
+        }
+        else {
+            return 0;
+        }
+    }
+    
+    public function viewlistjobs($user_id){
+        
+        $data = todolists::where(['user_id'=>$user_id])->select('id','job_title','job_status')->get(); 
+     
+        if($data != NULL){
+            return view('list_jobs',['list_job'=>$data]);
+        }
+        else {
+            return 0;
+        }
     }
     
 }
