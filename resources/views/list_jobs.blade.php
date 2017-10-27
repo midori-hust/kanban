@@ -1,22 +1,29 @@
-<h1> List Job - ALL </h1>
-<table>
+
+<table border="1px solid #ccc">
+    <caption> <h1> List Job - ALL </h1> </caption>
     <tr>
-        <td>No.</td>
-        <td>Title</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        <th>DO</th>
+        <th>DOING</th>
+        <th>DONE</th>
     </tr>
-<?php
-    $i = 0;
-    foreach ($list_job as $job) {
-        $i++;
-        echo "<tr>";
-            echo "<td> $i </td>";
-            echo "<td> $job->job_title </td>";
-            echo "<td><a href=\"".url('edit_job/'.$job->id)."\"> Edit </a></td>";
-            echo "<td><a href=\"".url('delete_job/'.$job->id)."\"> Delete </a></td>";
-        echo "</tr>";
-    }
-?>
+        <?php
+         foreach ($list_job as $jobs) {
+          echo "<td>";
+          $i=0;
+            foreach ($jobs as $job) {
+                echo $i++.".<a href=\"".url('/view_detail_job/'.$job->id)."\">".$job->job_title."</a><br>";
+                echo "<hr>";
+            }
+           echo "</td>";
+        }
+        ?>
+    </tr>
+    </tr>
+        <?php
+         foreach ($list_job as $jobs) {
+          echo "<td>Count:".$jobs->count()."</td>";
+        }
+        ?>
+    </tr>
 
 </table>

@@ -126,9 +126,11 @@ class ToDoListsController extends Controller
     public function viewlistjobs($user_id){
         
         $data = todolists::where(['user_id'=>$user_id])->select('id','job_title','job_status')->get(); 
-     
+        
+        $grouped = $data->groupBy('job_status');
+       // return $grouped->all();
         if($data != NULL){
-            return view('list_jobs',['list_job'=>$data]);
+            return view('list_jobs',['list_job'=>$grouped]);
         }
         else {
             return 0;
