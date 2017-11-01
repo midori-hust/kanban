@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 @if(Auth::check())
     <h1> Create JOB </h1>
     <form action="{{url('handle_create_job')}}" method="post">
@@ -22,3 +25,4 @@
     </form>
 @endif
 
+@endsection

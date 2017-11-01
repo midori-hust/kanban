@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 @if(Auth::check() )
     <h1> Edit JOB </h1>
 
@@ -22,4 +24,4 @@
         <input type="submit" value="Edit"/>
     </form>
 @endif
-
+@endsection

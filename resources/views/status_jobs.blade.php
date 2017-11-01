@@ -1,10 +1,14 @@
+@extends('layouts.app')
+@section('content')
 <h1> List Job -{{$job_status}} </h1>
+<a href="{{url('/home')}}"> Home </a>
 <table>
     <tr>
-        <td>No.</td>
-        <td>Title</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        <th>No.</th>
+        <th>Title</th>
+        <th>View detail</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
 <?php
     $i = 0;
@@ -13,9 +17,11 @@
         echo "<tr>";
             echo "<td> $i </td>";
             echo "<td> $job->job_title </td>";
+            echo "<td><a href=\"".url('view_detail_job/'.$job->id)."\"> View detail </a></td>";
             echo "<td><a href=\"".url('edit_job/'.$job->id)."\"> Edit </a></td>";
             echo "<td><a href=\"".url('delete_job/'.$job->id)."\"> Delete </a></td>";
         echo "</tr>";
     }
 ?>
 </table>
+@endsection

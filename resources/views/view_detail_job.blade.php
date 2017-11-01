@@ -1,4 +1,5 @@
- 
+@extends('layouts.app')
+@section('content')
 @if($job != NULL)
     <h2> Create Detail Job</h2>
     <p> <b> Title: </b> {{$job->job_title}}</p>
@@ -8,3 +9,4 @@
     <a href="{{url('edit_job/'.$job->id)}}"> Edit </a>
     <a href="{{url('delete_job/'.$job->id)}}"> Delete </a>
 @endif
+@endsection
