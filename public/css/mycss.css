@@ -1,0 +1,16 @@
+#main{
+    /*margin:-10px 30px 20px 30px;*/
+}
+
+#profile{
+    display: inline-block;
+    background-color: red;
+    height: 500px;
+
+}
+#content{
+    display: inline-block;
+    background-color: green;
+    height: 500px;
+
+}

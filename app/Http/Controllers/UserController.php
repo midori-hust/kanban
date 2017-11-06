@@ -14,14 +14,18 @@ class UserController extends Controller
         $fileimg->move('avatar',$fileimg->getClientOriginalName());
         $user = user::find($request->id); 
         if($user != null){
+            //TODO:Change name before upload
             $user->avatar_path = 'avatar/'.$fileimg->getClientOriginalName();
             $user->save();
         }
-       // return view('profile',['avatar_path'=>'avatar/'.$fileimg->getClientOriginalName()]);
-       return $request->id;
+       return view('profile');
     }
     
-    public function update(){}
-    public function show(){}
+    public function update(){
+        
+    }
+    public function show(){
+        
+    }
 
 }
