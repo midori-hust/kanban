@@ -1,16 +1,57 @@
 #main{
-    /*margin:-10px 30px 20px 30px;*/
+   
+    background-color: blue;
+    min-height: 585px;
+    display: block;
+    margin: auto;
+    margin-top: -22px;
+    width: 90%;
 }
 
 #profile{
-    display: inline-block;
+    width: 26%;
     background-color: red;
-    height: 500px;
-
-}
-#content{
     display: inline-block;
-    background-color: green;
-    height: 500px;
-
+    vertical-align: top;
+    
 }
+
+#content1{
+    width: 73%;
+    background-color: green;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#function{
+    background-color: pink;
+    min-height: 30px;
+    font-size: 17px;
+    height: 100%;
+}
+#function ul{
+    padding: 0px 5px 5px 0px;
+    list-style-type: none;
+    margin: 0;
+}
+
+#function li {
+    display: inline-block;
+}
+#function li a{
+    min-height: 40px;
+    padding: 8px 16px; 
+    background-color: pink;
+}
+#function li a:hover{
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+}
+.navtext{
+    background-color: pink;
+    color: #555;
+    text-decoration: none;
+}
+
+

@@ -14,13 +14,20 @@
             <input type="submit" value="Update avatar"/>
         </form>
     </div >
-    <div id="content" >
-        <div id="function" >
-            
+    <div id="content1" >
+        <div id="function">
+            <ul>
+                <li> <a href="{{url('create_job')}}"> Add Job </a> </li>
+                <li> <a class="navtext"> |  View To Do Lists : </a> </li>
+                <li> <a href="{{url('view_listjobs/'.Auth::id().'/do')}}"> Status : DO </a> </li>
+                <li> <a href="{{url('view_listjobs/'.Auth::id().'/doing')}}"> Status : DOING </a> </li>
+                <li> <a href="{{url('view_listjobs/'.Auth::id().'/done')}}"> Status : DONE </a> </li>
+                <li> <a href="{{url('view_listjobs/'.Auth::id())}}"> Status : ALL </a></li>
+            </ul>
+           
         </div>
         <div id="function_handle">
-            <h2>THIS IS CONTENT </h2>
-            
+            <h1>function handle </h1>
         </div>
     </div>    
     
