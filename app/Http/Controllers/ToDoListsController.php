@@ -62,7 +62,7 @@ class ToDoListsController extends Controller
         $job = todolists::find($id);
         if($job == NULL)
             return redirect()->route('home');
-        return view('view_detail_job',['job'=>$job]);
+        return view('job/view_detail_job',['job'=>$job]);
     }
 
     /**
@@ -76,7 +76,7 @@ class ToDoListsController extends Controller
         $job = todolists::find($id);
         if($job == null) 
             return redirect()->route('home');
-        return view('edit_job',['job'=>$job]);
+        return view('job/edit_job',['job'=>$job]);
     }
 
     /**
@@ -116,7 +116,7 @@ class ToDoListsController extends Controller
         $data = todolists::where(['user_id'=>$id,'job_status'=>$job_status])->select('id','job_title')->get();
       
         if($data != NULL){
-            return view('status_jobs',['list_job'=>$data,'job_status'=>$job_status]);
+            return view('listjobs/status_jobs',['list_job'=>$data,'job_status'=>$job_status]);
         }
         else {
             return 0;
@@ -130,7 +130,7 @@ class ToDoListsController extends Controller
         $data = collect(['do'=>$grouped->get('do'),'doing'=>$grouped->get('doing'),'done'=>$grouped->get('done')]);
          
         if($data != NULL){
-            return view('list_jobs',['list_job'=>$data]);
+            return view('listjobs/list_jobs',['list_job'=>$data]);
         }
         else {
             return 0;

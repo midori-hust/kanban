@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create_job',function(){
-  return view('create_job');  
+  return view('job/create_job');  
 });
 
 Route::post('/handle_create_job','ToDoListsController@store')->name('store');

@@ -3,9 +3,10 @@
 <div id="main">
     <div id="profile" >
         <div id="info">
-            <h3> {{Auth::user()->name}} </h3>
-              
-            <img src="{{Auth::user()->avatar_path}}"></img>
+            <div id="username">
+                <h3> {{Auth::user()->name}} </h3>    
+            </div>
+            <img src="{{url(Auth::user()->avatar_path)}}"></img>
         </div>
         <div id="form_update">
             <form action="{{url('update_avatar')}}" enctype="multipart/form-data" method="POST">
@@ -30,10 +31,8 @@
            
         </div>
         <div id="function_handle">
-            <h1>function handle </h1>
+            @yield('function_handle')
         </div>
     </div>    
-    
 </div>
-
 @endsection
