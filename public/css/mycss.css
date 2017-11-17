@@ -15,9 +15,15 @@
     height: 100%;
     min-height: 585px;
 }
-#username{
+#info{
     margin: auto;
+}
+#username{
+    /*margin: auto;*/
     text-align: center;
+}
+#username h3{
+    font-size: 30px;
 }
 #profile img{
     display: block;

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('function_handle')
 <h1> List Job -{{$job_status}} </h1>
-<a href="{{url('/home')}}"> Home </a>
+
 <table>
     <tr>
         <th>No.</th>

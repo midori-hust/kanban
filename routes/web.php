@@ -38,4 +38,8 @@ Route::get('/view_listjobs/{user_id}','ToDoListsController@viewlistjobs');
 Route::get('/profile',function(){
   return view('profile');
 });
+Route::get('/homepage',function(){
+  return view('homepage');
+});
+
 Route::post('update_avatar','UserController@store');
