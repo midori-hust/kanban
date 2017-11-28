@@ -7,7 +7,11 @@
         {{csrf_field()}}
         <label for="job_title"> Job Title</label><br/>
         <input type="text" name="job_title" placeholder="新聞を読む" value="{{old('job_title')}}"/><br/><br/>
-        
+            @if ($errors->has('job_title'))
+                <span class="help-block">
+                <strong>{{ $errors->first('job_title') }}</strong>
+                </span>
+            @endif
         <label for="job_description"> Job Description </label><br/>
         <input type="text" name="job_description" placeholder="中部経済新聞を読む" value="{{old('job_description')}}"/><br/><br/>
         

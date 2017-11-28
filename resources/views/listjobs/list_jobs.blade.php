@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('function_handle')
-<table border="1px solid #ccc">
+<table border="1px solid #ccc" width="90%" style="padding:15px">
     <caption> <h1> List Job - ALL </h1> </caption>
     <tr>
         <th>DO</th>
@@ -14,6 +14,7 @@
      foreach ($list_job as $jobs) {
             echo "<td>";
             $i=1;
+            
             if(isset($jobs)){
                 foreach ($jobs as $job) {
                 echo $i++.".<a href=\"".url('/view_detail_job/'.$job->id)."\">".$job->job_title."</a><br>";
@@ -26,8 +27,6 @@
     </tr>
     @endif
        
-
-   
-
 </table>
+    
 @endsection
